@@ -7,58 +7,91 @@ block variables
   - metaKeywords = "keywords"
 
 block content
-  .test(style="height: 1500px")
-  section.contacts
-    .container
-      .contacts__inner
-        form.form.contacts__form(action="https://jsonplaceholder.typicode.com/posts")
-          .form__row
-            label.field
-              span.field__label Ваше имя
-              input.input.field__input(type="text", placeholder="Укажите ваше имя", name="name", required)
-            label.field
-              span.field__label Номер телефона
-              input.input.field__input(type="tel", placeholder="+7(___)___-__-__", name="phone", required)
-            label.field
-              span.field__label Ваш email
-              input.input.field__input(type="email", placeholder="Укажите ваш email", name="email", required)
-            button.button.form__button(type="submit") Отправить
-          .form__row
-            label.checkbox
-              input.checkbox__input(type="checkbox", name="isAgree", required)
-              .checkbox__fake-input
-              span.checkbox__label.
-                Нажимая на кнопку «Отправить» Вы даёте согласие на обработку своих персональных данных
-                в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ
-                «О персональных данных»
-        .contacts__block
-          .contacts__info
-            h2.contacts__title Наши контакты
-            .contacts__item
-              .contacts__icon
-                svg.contacts__symbol
-                  use(href= path.icon + "icon__building")
-              .contacts__label Компания
-              .contacts__value ООО «СервисАгро+»
-            .contacts__item
-              .contacts__icon
-                svg.contacts__symbol
-                  use(href= path.icon + "icon__phone")
-              .contacts__label Телефон
-              a.contacts__value(href="tel:88006009055") 8 800 600 9055
-            .contacts__item
-              .contacts__icon
-                svg.contacts__symbol
-                  use(href= path.icon + "icon__email")
-              .contacts__label Пишите нам
-              a.contacts__value(href="mailto:servisagro2@gmail.com") servisagro2@gmail.com
-            .contacts__item
-              .contacts__icon
-                svg.contacts__symbol
-                  use(href= path.icon + "icon__pin")
-              .contacts__label Заходите в гости
-              .contacts__value РТ, г. Казань,<br> ул. Поперечно-Отарская, д. 100
-          .contacts__map
-            script(type="text/javascript", charset="utf-8", async, src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbd26ddeda080513fb8cdf211b3f35aec483524ff63f6736f229e7141ddd866d&width=100%25&height=100%&lang=ru_RU&scroll=true")
+  .grid
+    section.services
+      .container
+        .services__inner
+          h2.services__title Услуги
+          .services__row
+            .services__tile
+              .services__tile-side.services__tile-front
+                .services__tile-title Аудит<br>хозяйств
+                svg.services__tile-icon
+                  use(href= path.icon + "icon__file")
+                svg.services__tile-arrow
+                  use(href= path.icon + "icon__arrow")
+              .services__tile-side.services__tile-back
+                .services__tile-descr Независимый аудит — лучший способ выявить проблема, которые не дают хозяйству работать с высокой эффективностью. Мы проводим комплексный аудит молочной формы и анализируем все выявления проблемы. С нашей помощью клиент сможет выявить факторы, которые оказывают негативные влияние на эффективность и экономику хозяйств.
+            .services__tile
+              .services__tile-side.services__tile-front
+                .services__tile-title Расчет<br>рациона
+                svg.services__tile-icon
+                  use(href= path.icon + "icon__apple")
+                svg.services__tile-arrow
+                  use(href= path.icon + "icon__arrow")
+              .services__tile-side.services__tile-back
+                .services__tile-descr text
+            .services__tile
+              .services__tile-side.services__tile-front
+                .services__tile-title Лабораторные<br>исследования
+                svg.services__tile-icon
+                  use(href= path.icon + "icon__lab")
+                svg.services__tile-arrow
+                  use(href= path.icon + "icon__arrow")
+              .services__tile-side.services__tile-back
+                .services__tile-descr text
+
+    section.contacts
+      .container
+        .contacts__inner
+          form.form.contacts__form(action="https://jsonplaceholder.typicode.com/posts")
+            .form__row
+              label.field
+                span.field__label Ваше имя
+                input.input.field__input(type="text", placeholder="Укажите ваше имя", name="name", required)
+              label.field
+                span.field__label Номер телефона
+                input.input.field__input(type="tel", placeholder="+7(___)___-__-__", name="phone", required)
+              label.field
+                span.field__label Ваш email
+                input.input.field__input(type="email", placeholder="Укажите ваш email", name="email", required)
+              button.button.form__button(type="submit") Отправить
+            .form__row
+              label.checkbox
+                input.checkbox__input(type="checkbox", name="isAgree", required)
+                .checkbox__fake-input
+                span.checkbox__label.
+                  Нажимая на кнопку «Отправить» Вы даёте согласие на обработку своих персональных данных
+                  в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ
+                  «О персональных данных»
+          .contacts__block
+            .contacts__info
+              h2.contacts__title Наши контакты
+              .contacts__item
+                .contacts__icon
+                  svg.contacts__symbol
+                    use(href= path.icon + "icon__building")
+                .contacts__label Компания
+                .contacts__value ООО «СервисАгро+»
+              .contacts__item
+                .contacts__icon
+                  svg.contacts__symbol
+                    use(href= path.icon + "icon__phone")
+                .contacts__label Телефон
+                a.contacts__value(href="tel:88006009055") 8 800 600 9055
+              .contacts__item
+                .contacts__icon
+                  svg.contacts__symbol
+                    use(href= path.icon + "icon__email")
+                .contacts__label Пишите нам
+                a.contacts__value(href="mailto:servisagro2@gmail.com") servisagro2@gmail.com
+              .contacts__item
+                .contacts__icon
+                  svg.contacts__symbol
+                    use(href= path.icon + "icon__pin")
+                .contacts__label Заходите в гости
+                .contacts__value РТ, г. Казань,<br> ул. Поперечно-Отарская, д. 100
+            .contacts__map
+              script(type="text/javascript", charset="utf-8", async, src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbd26ddeda080513fb8cdf211b3f35aec483524ff63f6736f229e7141ddd866d&width=100%25&height=100%&lang=ru_RU&scroll=true")
 
   +modal()

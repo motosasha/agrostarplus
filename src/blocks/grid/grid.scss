@@ -1,0 +1,13 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.grid {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 64px;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    gap: 120px;
+  }
+}
