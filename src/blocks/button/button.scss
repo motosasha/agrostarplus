@@ -1,0 +1,22 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/button-reset";
+@use "../../scss/mixins/text-styles";
+
+.button {
+  $block-name: &; // #{$block-name}__element
+
+  @include button-reset.button-reset;
+  @include text-styles.button;
+
+  padding: 14px 24px;
+  color: var(--front-tertiary);
+  background-color: var(--back-dark);
+  border-radius: 24px;
+  transition: background-color var(--transition-default);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-dark);
+    }
+  }
+}

@@ -14,9 +14,10 @@
   --blue: #196ca8; // Primary
   --blue-light: #5ca6db;
   --blue-lighten: #eaf6ff; // Bckg-blue
+  --blue-dark: #124f7c;
 
   // fonts
-  --font-sans: "Onest", system-ui, Inter, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+  --font-sans: "Gilroy", system-ui, Inter, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
   "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
   --font-serif: Georgia, "Times New Roman", Times, serif;
@@ -34,10 +35,13 @@
   // semantic colors
   --front-primary: var(--black);
   --front-secondary: var(--grey);
-  --front-inverted: var(--white);
+  --front-tertiary: var(--blue-lighten);
+  --front-invert: var(--white);
+  --front-brand: var(--blue);
 
   --back-primary: var(--white);
   --back-secondary: var(--blue-lighten);
+  --back-dark: var(--blue);
 
   --darker-bg-color: var(--black-transparent);
 
@@ -51,15 +55,16 @@
 
   // z-index
   --z-index-base: 1;
+  --z-index-header: 2;
+  --z-index-darker: 3;
+  --z-index-nav: 4;
 
   // layout
   --max-width: 1296px;
+  --nav-width: 264px;
 
-  --page-padding: 0;
+  --page-padding: 16px;
   @media screen and (min-width: breakpoints.$screen-ti) {
-    --page-padding: 0;
-  }
-  @media screen and (min-width: breakpoints.$screen-d) {
-    --page-padding: 0;
+    --page-padding: 24px;
   }
 }

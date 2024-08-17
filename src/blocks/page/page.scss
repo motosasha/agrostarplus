@@ -8,7 +8,7 @@
   min-height: calc(var(--vh) * 100);
 
   &__header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: var(--z-index-header);
@@ -24,9 +24,21 @@
     flex: 1 0 auto;
   }
 
-  &__footer {
-    position: relative;
-    flex: 0 0 auto;
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: var(--z-index-nav);
+    transform: translateX(var(--nav-width));
+    transition: transform var(--transition-default);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: none;
+    }
+
+    [data-state="nav-open"] & {
+      transform: translateX(0);
+    }
   }
 
   &__darker {

@@ -1,0 +1,74 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/button-reset";
+@use "../../scss/mixins/link-reset";
+@use "../../scss/mixins/text-styles";
+
+.nav {
+  $block-name: &; // #{$block-name}__element
+
+  width: var(--nav-width);
+  height: 100vh;
+  overflow: hidden auto;
+  background-color: var(--back-primary);
+
+  &__inner {
+    display: grid;
+    gap: 24px;
+    padding: 32px 16px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 148px;
+    height: 20px;
+    transition: opacity var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__close {
+    @include button-reset.button-reset;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  &__body {
+    display: grid;
+    gap: 24px;
+  }
+
+  &__nav {
+    display: grid;
+    gap: 18px;
+    justify-items: start;
+  }
+
+  &__link {
+    @include link-reset.link-reset;
+    @include text-styles.description;
+
+    transition: color var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-brand);
+      }
+    }
+  }
+}

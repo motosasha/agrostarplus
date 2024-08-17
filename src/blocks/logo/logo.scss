@@ -1,9 +1,9 @@
 @use "../../scss/breakpoints";
 @use "../../scss/mixins/text-styles";
 
-.container {
+.logo {
   $block-name: &; // #{$block-name}__element
 
-  width: min(calc(100% - var(--page-padding) * 2), var(--max-width));
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }

@@ -1,0 +1,40 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/link-reset";
+@use "../../scss/mixins/text-styles";
+
+.phone {
+  $block-name: &; // #{$block-name}__element
+
+  @include link-reset.link-reset;
+
+  display: grid;
+  grid-template-columns: 34px auto;
+  gap: 2px 12px;
+
+  &__icon {
+    grid-row: 1 / 3;
+    align-self: center;
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    background-color: var(--back-dark);
+    border-radius: 50%;
+  }
+
+  &__symbol {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__num {
+    @include text-styles.subtitle;
+
+    grid-column: 2;
+  }
+
+  &__descr {
+    @include text-styles.caption;
+
+    grid-column: 2;
+  }
+}

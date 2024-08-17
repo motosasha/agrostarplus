@@ -1,0 +1,46 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin header(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " header--" + modsList[i].trim();
+      }
+    }
+
+  .header(class=allMods)&attributes(attributes)
+    .container
+      .header__inner
+        button.header__logo
+          svg.logo
+            use(href= path.icon + "logo__agro")
+        nav.header__nav
+          a.header__link(href="#") О компании
+          a.header__link(href="#") Продукция
+          a.header__link(href="#") Услуги
+          a.header__link(href="#") Контакты
+        .header__actions
+          .header__phone
+            a.phone(href="tel:88006009055")
+              .phone__icon
+                svg.phone__symbol
+                  use(href= path.icon + "icon__phone")
+              .phone__num 8 800 600 9055
+              .phone__descr Бесплатный звонок по РФ
+          button.button.header__button Написать нам
+        button.header__menu(data-menu-trigger)
+          .burger
+            .burger__line
+            .burger__line
+            .burger__line

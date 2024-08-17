@@ -23,13 +23,13 @@ html(class="no-js", lang="ru")
       include ../service/project-nav.pug
 
     .page
+      .page__nav
+        +nav
       .page__header
-        //+header
+        +header
       .page__main
         block content
           .content-filler content-filler
-      .page__footer
-        //+footer
       .page__darker
 
     block templates
