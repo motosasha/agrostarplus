@@ -1,0 +1,5 @@
+build/
+src/scss/vendor/*.scss
+src/scss/*reboot.scss
+src/scss/*style.scss
+src/scss/*variables.scss

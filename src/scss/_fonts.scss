@@ -1,0 +1,4 @@
+@use "mixins/font-face";
+@include font-face.ff("Gilroy", "Gilroy-Regular");
+@include font-face.ff("Gilroy", "Gilroy-Medium", 500);
+@include font-face.ff("Gilroy", "Gilroy-SemiBold", 600);

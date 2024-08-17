@@ -1,0 +1,10 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.container {
+  $block-name: &; // #{$block-name}__element
+
+  width: calc(100% - var(--page-padding) * 2);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}

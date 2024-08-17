@@ -1,0 +1,100 @@
+{
+  "extends": [
+    "stylelint-config-rational-order",
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+    "stylelint-config-rational-order/plugin",
+    "stylelint-scss",
+    "stylelint-selector-bem-pattern",
+    "stylelint-order"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "/^at-/",
+        "/^use/",
+        "/^mixin/",
+        "/^extend/",
+        "/^include/",
+        "/^if/",
+        "/^else/",
+        "/^function/",
+        "/^return/",
+        "/^each/",
+        "/^while/"
+      ]
+    }],
+    "comment-word-disallowed-list": [
+      ["/((Х|х)+уй|(Х|х)уе|(Х|х)уё|(Б|б)ляд|(М|м)уда|(П|п)идо|(П|п)еди|(П|п)еде|(^|)+(Б|б)ля)/"],
+      {
+        "message": "Комментарий оскорбительный при себе оставь"
+      }
+    ],
+    "function-no-unknown": null,
+    "import-notation": "string",
+    "media-query-no-invalid": null,
+    "order/order": [
+      "dollar-variables",
+      "custom-properties",
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      "declarations",
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+      {
+        "type": "rule",
+        "selector": "^&:\\w+$"
+      },
+      {
+        "type": "rule",
+        "selector": "^&--[-a-z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^\\.[-_a-zA-Z0-9]+"
+      },
+      {
+        "type": "rule",
+        "selector": "^&__[-a-z0-9]+"
+      }
+    ],
+    "plugin/selector-bem-pattern": [
+      {
+        "implicitComponents": true,
+        "componentName": "[-a-z]+",
+        "componentSelectors": {
+          "initial": "^(\\.{componentName}(__[a-z]+|--[-a-z0-9]+|__[-a-z]+--[-a-z0-9]+|.[-a-z]+|__[a-z]+.[-a-z]+)?)$",
+          "combined": "^.+$"
+        },
+        "ignoreSelectors": [
+          "^\\.(no-)?js(-modal-open)?$",
+          "a(\\[[a-z]+|:[a-z]+)?",
+          "h[1-6]",
+          "pre",
+          "blockquote",
+          "thead",
+          "tr",
+          "img",
+          "p",
+          "table",
+          "^&:empty",
+          "#{\\$[-a-z]+}__[-a-z]+",
+          "^\\*$"
+        ]
+      },
+      {
+        "severity": "warning",
+        "message": "Селектор не из имени файла или БЭМ-ошибка"
+      }
+    ],
+    "property-no-vendor-prefix": null,
+    "scss/comment-no-empty": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/double-slash-comment-whitespace-inside": null
+  }
+}

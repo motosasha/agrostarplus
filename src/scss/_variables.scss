@@ -1,0 +1,65 @@
+@use "breakpoints";
+@use "mixins/text-styles";
+@use "sass:color";
+
+:root {
+  // color primitives
+  --color-black: #000;
+  --color-white: #fff;
+
+  --white: #ffffff;
+  --grey: #595959;
+  --black: #000000;
+  --black-transparent: rgba(0 0 0 / 40%);
+  --blue: #196ca8; // Primary
+  --blue-light: #5ca6db;
+  --blue-lighten: #eaf6ff; // Bckg-blue
+
+  // fonts
+  --font-sans: "Onest", system-ui, Inter, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
+  "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  // base
+  --body-bg: var(--back-primary);
+  --body-color: var(--front-primary);
+  --font-base: var(--font-sans);
+  --font-size-root: 100%;
+  --font-size-base: 1rem;
+  --font-weight-base: 400;
+  --line-height-base: 1.25;
+
+  // semantic colors
+  --front-primary: var(--black);
+  --front-secondary: var(--grey);
+  --front-inverted: var(--white);
+
+  --back-primary: var(--white);
+  --back-secondary: var(--blue-lighten);
+
+  --darker-bg-color: var(--black-transparent);
+
+  // transitions
+  --transition-default: 0.25s ease;
+
+  // shadows
+
+  // blur
+  --blur-default: blur(8px);
+
+  // z-index
+  --z-index-base: 1;
+
+  // layout
+  --max-width: 1296px;
+
+  --page-padding: 0;
+  @media screen and (min-width: breakpoints.$screen-ti) {
+    --page-padding: 0;
+  }
+  @media screen and (min-width: breakpoints.$screen-d) {
+    --page-padding: 0;
+  }
+}

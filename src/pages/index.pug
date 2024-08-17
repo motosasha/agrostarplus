@@ -1,0 +1,12 @@
+extends ../templates/template__default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = "СервисАгро+"
+  - metaDescription = "description"
+  - metaKeywords = "keywords"
+
+block content
+  .container
+    h1 Header
+    div!= json.info.data

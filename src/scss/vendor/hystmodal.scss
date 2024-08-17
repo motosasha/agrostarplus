@@ -1,0 +1,99 @@
+.hystmodal__opened {
+  overflow: hidden;
+}
+
+.hystmodal__shadow {
+  background: var(--back-transparency);
+  border: none;
+  bottom: 0;
+  display: block;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.25s ease;
+  width: 100%;
+  z-index: 98;
+}
+
+.hystmodal__shadow--show {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.25s;
+}
+
+.hystmodal {
+  bottom: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  z-index: 99;
+}
+
+.hystmodal--active {
+  opacity: 1;
+}
+
+.hystmodal--moved,
+.hystmodal--active {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.hystmodal__wrap {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  margin: auto;
+  min-height: 100%;
+  width: 100%;
+  background-color: var(--darker-bg-color);
+  backdrop-filter: blur(2px);
+}
+
+.hystmodal__window {
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin: 5rem 0;
+  max-width: 100%;
+  opacity: 0;
+  overflow: visible;
+  transform: scale(0.9);
+  transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+}
+
+.hystmodal--active .hystmodal__window {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hystmodal__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}

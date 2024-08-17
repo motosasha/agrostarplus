@@ -1,0 +1,51 @@
+@use "../../scss/breakpoints";
+
+.page {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  min-height: calc(var(--vh) * 100);
+
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-index-header);
+    flex: 0 0 auto;
+    width: 100%;
+
+    .hystmodal__opened & { // stylelint-disable-line
+      width: calc(100% - var(--css-scroll-size));
+    }
+  }
+
+  &__main {
+    flex: 1 0 auto;
+  }
+
+  &__footer {
+    position: relative;
+    flex: 0 0 auto;
+  }
+
+  &__darker {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-darker);
+    background-color: var(--darker-bg-color);
+    visibility: hidden;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+    transition: all var(--transition-default);
+
+    [data-state="nav-open"] & {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      display: none;
+    }
+  }
+}
