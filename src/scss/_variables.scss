@@ -15,6 +15,7 @@
   --blue-light: #5ca6db;
   --blue-lighten: #eaf6ff; // Bckg-blue
   --blue-dark: #124f7c;
+  --red: #b90202;
 
   // fonts
   --font-sans: "Gilroy", system-ui, Inter, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu",
@@ -38,6 +39,7 @@
   --front-tertiary: var(--blue-lighten);
   --front-invert: var(--white);
   --front-brand: var(--blue);
+  --front-error: var(--red);
 
   --back-primary: var(--white);
   --back-secondary: var(--blue-lighten);

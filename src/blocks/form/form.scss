@@ -1,0 +1,40 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.form {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 16px;
+
+  @media screen and (min-width: breakpoints.$screen-tl) {
+  	gap: 24px;
+  }
+
+  &__row {
+    display: grid;
+    gap: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-ti) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      grid-template-columns: auto auto auto 196px;
+      gap: 24px;
+    }
+
+    .checkbox {
+      grid-column: 1 / -1;
+      max-width: 820px;
+
+      @media screen and (min-width: breakpoints.$screen-tl) {
+      	align-items: center;
+      }
+    }
+  }
+
+  &__button {
+    align-self: end;
+  }
+}

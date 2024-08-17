@@ -7,6 +7,6 @@ ready(function () {
   });
 
   window.thanks = function () {
-    modal.open("#popup-thanks");
+    modal.open("#modal-thanks");
   };
 });

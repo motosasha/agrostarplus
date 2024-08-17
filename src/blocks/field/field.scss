@@ -1,0 +1,23 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.field {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 9px;
+
+  &__label {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.14px;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      @include text-styles.subtitle;
+    }
+  }
+
+  &__error {
+    color: var(--front-error);
+  }
+}

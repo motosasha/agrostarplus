@@ -1,0 +1,56 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.checkbox {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  grid-template-columns: 28px auto;
+  gap: 12px;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__fake-input {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    padding: 3px;
+    background-color: var(--back-primary);
+    border: 1px solid var(--back-dark);
+    border-radius: 8px;
+    transition: background-color var(--transition-default);
+
+    &::before {
+      display: block;
+      width: 12px;
+      height: 7px;
+      border-bottom: 1.5px solid var(--front-invert);
+      border-left: 1.5px solid var(--front-invert);
+      transform: rotate(-45deg) translateY(6px);
+      content: "";
+    }
+  }
+
+  &__input:checked + &__fake-input {
+    background-color: var(--back-dark);
+  }
+
+  &__label {
+    color: var(--grey);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.2;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	@include text-styles.caption;
+    }
+  }
+
+  &__error {
+    grid-column: 2;
+    color: var(--front-error);
+  }
+}
