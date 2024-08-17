@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modal)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт
+//- в сборку
+
+mixin modal(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modal("some-mod")
+
+  //- список модификаторов
+  -
+    var allMods = "";
+    if (typeof (mods) !== "undefined" && mods) {
+      var modsList = mods.split(",");
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + " modal--" + modsList[i].trim();
+      }
+    }
+
+  #modal-thanks.hystmodal(aria-hidden="true")
+    .hystmodal__wrap
+      .hystmodal__window.modal(class=allMods, role="dialog", aria-modal="true")&attributes(attributes)
+        .modal__inner
+          button.hystmodal__close.modal__close(data-hystclose="", title="Закрыть")
+            svg.modal__icon
+              use(href="img/svgSprite.svg#icon__cross")
+          .modal__center
+            header.modal__header
+              h2.modal__title Благодарим<br> Вас за заявку!
+              p.modal__descr Наш менеджер свяжется с вами в ближайшее время
+            button.button.modal__button(data-hystclose="") Закрыть

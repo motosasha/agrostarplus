@@ -18,5 +18,9 @@
     &:hover {
       background-color: var(--blue-dark);
     }
+
+    &:active {
+      background-color: var(--blue-light);
+    }
   }
 }

@@ -64,7 +64,7 @@
   min-height: 100%;
   width: 100%;
   background-color: var(--darker-bg-color);
-  backdrop-filter: blur(2px);
+  backdrop-filter: var(--blur-default);
 }
 
 .hystmodal__window {
