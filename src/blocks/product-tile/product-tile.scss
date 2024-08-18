@@ -1,0 +1,128 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.product-tile {
+  $block-name: &; // #{$block-name}__element
+
+  display: grid;
+  gap: 16px;
+  height: 100%;
+  padding: 16px;
+  background-color: var(--back-secondary);
+  border-radius: 24px;
+
+  @media screen and (min-width: breakpoints.$screen-d) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  &__image {
+    object-fit: cover;
+    background-image: var(--back-primary);
+    border-radius: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      height: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 24px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3334;
+    letter-spacing: 0.18px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	@include text-styles.h2;
+    }
+  }
+
+  &__descr {
+    margin-top: 4px;
+    color: var(--grey);
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.12px;
+    text-transform: uppercase;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.caption;
+    }
+  }
+
+  &__table {
+    display: grid;
+    gap: 12px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      gap: 18px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.14px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.description;
+    }
+  }
+
+  &__key {
+    color: var(--grey);
+  }
+
+  &__file {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 4px 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.14px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.description;
+
+      grid-template-columns: 48px auto;
+    }
+  }
+
+  &__file-icon {
+    grid-row: 1 / 3;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__file-link {
+    justify-self: start;
+    color: var(--front-link);
+    text-decoration: none;
+    transition: color var(--transition-default);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--front-brand);
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: auto;
+  }
+}

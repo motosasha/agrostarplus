@@ -4,10 +4,13 @@
 .grid {
   $block-name: &; // #{$block-name}__element
 
-  display: grid;
-  gap: 64px;
+  > *:not(:first-child) {
+    margin-top: 64px;
+  }
 
   @media screen and (min-width: breakpoints.$screen-d) {
-    gap: 120px;
+    > *:not(:first-child) {
+      margin-top: 120px;
+    }
   }
 }

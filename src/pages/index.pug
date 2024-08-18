@@ -24,6 +24,41 @@ block content
               производственными линиями.
             button.button.about__button Подробнее
 
+    section.products
+      .container
+        .products__inner
+          h2.products__title Продукция
+          .swiper.products__slider
+            .swiper-wrapper
+              each slide in json.production
+                .swiper-slide.products__slide
+                  .product-tile
+                    img.product-tile__image(src= path.img + slide.image, alt="")
+                    .product-tile__info
+                      .product-tile__header
+                        h3.product-tile__title!= slide.title
+                        .product-tile__descr!= slide.description
+                      .product-tile__table
+                        each row in slide.table
+                          .product-tile__row
+                            .product-tile__key!= row.key
+                            .product-tile__value!= row.value
+                      if slide.file
+                        .product-tile__file
+                          svg.product-tile__file-icon
+                            use(href= path.icon + "icon__pdf")
+                          .product-tile__file-title!= slide.file.title
+                          a.product-tile__file-link(href="#", download) Скачать
+                      button.button.product-tile__button Узнать цену
+            .swiper-pagination.products__pagination
+            .products__nav
+              .products__prev
+                svg.products__icon
+                  use(href= path.icon + "icon__arrow--prev")
+              .products__next
+                svg.products__icon
+                  use(href= path.icon + "icon__arrow--next")
+
     section.services
       .container
         .services__inner

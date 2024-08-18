@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Palmatrix",
+    "description": "Сухой защищённый жир 84%",
+    "image": "product-palmatrix.webp",
+    "table": [
+      {
+        "key": "Вид:",
+        "value": "Порошок светло-бежевого цвета"
+      },
+      {
+        "key": "Упаковка:",
+        "value": "Мешок 25 кг"
+      },
+      {
+        "key": "Срок годности:",
+        "value": "12 месяцев"
+      }
+    ],
+    "file": {
+      "title": "Инструкция по применению",
+      "url": ""
+    }
+  },
+  {
+    "title": "Бовитаб",
+    "description": "Шипучая таблетка для восстановления электролитного баланса при диарее телят",
+    "image": "product-bobitab.webp",
+    "table": [
+      {
+        "key": "Вид:",
+        "value": "таблетка водорастворимая шипучая"
+      },
+      {
+        "key": "Упаковка:",
+        "value": "30 шт (0,06 кг каждая) в картонной коробке общим весом 2,0 кг"
+      },
+      {
+        "key": "Срок годности:",
+        "value": "18 месяцев"
+      }
+    ]
+  },
+  {
+    "title": "title",
+    "description": "description",
+    "image": "product-filler.webp",
+    "table": [
+      {
+        "key": "key",
+        "value": "value"
+      },
+      {
+        "key": "key",
+        "value": "value"
+      },
+      {
+        "key": "key",
+        "value": "value"
+      }
+    ]
+  },
+  {
+    "title": "title",
+    "description": "description",
+    "image": "product-filler.webp",
+    "table": [
+      {
+        "key": "key",
+        "value": "value"
+      },
+      {
+        "key": "key",
+        "value": "value"
+      },
+      {
+        "key": "key",
+        "value": "value"
+      }
+    ]
+  }
+]

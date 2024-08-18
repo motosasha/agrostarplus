@@ -1,0 +1,85 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.products {
+  $block-name: &; // #{$block-name}__element
+
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: 0.24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.h1;
+    }
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  &__slide {
+    height: auto;
+  }
+
+  &__pagination {
+    position: static;
+    z-index: 0;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    height: 8px;
+    margin-top: 16px;
+    transform: none;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      justify-content: end;
+      margin-top: 56px;
+    }
+
+    .swiper-pagination-bullet {
+      display: block;
+      width: 8px;
+      height: 8px;
+      margin: 0 !important;
+      background-color: #d3d1d1;
+      opacity: 1;
+
+      &-active {
+        background-color: var(--back-dark);
+      }
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 12px;
+  }
+
+  &__next,
+  &__prev {
+    width: 45px;
+    height: 45px;
+    padding: 4px;
+    color: #6c6c6d;
+    background-color: #d3d1d1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color var(--transition-default);
+
+    &:hover {
+      color: var(--front-invert);
+      background-color: var(--back-dark);
+    }
+  }
+
+  &__icon {
+    width: 36px;
+    height: 36px;
+  }
+}
