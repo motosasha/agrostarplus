@@ -4,7 +4,8 @@
 .product-tile {
   $block-name: &; // #{$block-name}__element
 
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   height: 100%;
   padding: 16px;
@@ -12,6 +13,7 @@
   border-radius: 24px;
 
   @media screen and (min-width: breakpoints.$screen-d) {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     padding: 24px;
@@ -23,12 +25,13 @@
     border-radius: 16px;
 
     @media screen and (min-width: breakpoints.$screen-d) {
-      height: 100%;
+      min-height: 100%;
     }
   }
 
   &__info {
     display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
     gap: 18px;
 
