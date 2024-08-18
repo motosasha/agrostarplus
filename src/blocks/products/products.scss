@@ -57,8 +57,12 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    display: flex;
+    display: none;
     gap: 12px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	display: flex;
+    }
   }
 
   &__next,
@@ -75,6 +79,11 @@
     &:hover {
       color: var(--front-invert);
       background-color: var(--back-dark);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.5;
+      pointer-events: none;
     }
   }
 

@@ -30,10 +30,10 @@ mixin nav(mods)
             use(href= path.icon + "icon__close")
       .nav__body
         nav.nav__nav
-          a.nav__link(href="#", data-menu-trigger) О компании
-          a.nav__link(href="#", data-menu-trigger) Продукция
-          a.nav__link(href="#", data-menu-trigger) Услуги
-          a.nav__link(href="#", data-menu-trigger) Контакты
+          a.nav__link(href="#about", data-menu-trigger) О компании
+          a.nav__link(href="#products", data-menu-trigger) Продукция
+          a.nav__link(href="#services", data-menu-trigger) Услуги
+          a.nav__link(href="#contacts", data-menu-trigger) Контакты
         .header__phone
           a.phone(href="tel:88006009055")
             .phone__icon
@@ -41,4 +41,4 @@ mixin nav(mods)
                 use(href= path.icon + "icon__phone")
             .phone__num 8 800 600 9055
             .phone__descr Бесплатный звонок по РФ
-        button.button.header__button(data-menu-trigger) Написать нам
+        a.button.header__button(href="#contacts", data-menu-trigger) Написать нам

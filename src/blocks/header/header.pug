@@ -26,10 +26,10 @@ mixin header(mods)
           svg.logo
             use(href= path.icon + "logo__agro")
         nav.header__nav
-          a.header__link(href="#") О компании
-          a.header__link(href="#") Продукция
-          a.header__link(href="#") Услуги
-          a.header__link(href="#") Контакты
+          a.header__link(href="#about") О компании
+          a.header__link(href="#products") Продукция
+          a.header__link(href="#services") Услуги
+          a.header__link(href="#contacts") Контакты
         .header__actions
           .header__phone
             a.phone(href="tel:88006009055")
@@ -38,7 +38,7 @@ mixin header(mods)
                   use(href= path.icon + "icon__phone")
               .phone__num 8 800 600 9055
               .phone__descr Бесплатный звонок по РФ
-          button.button.header__button Написать нам
+          a.button.header__button(href="#contacts") Написать нам
         button.header__menu(data-menu-trigger)
           .burger
             .burger__line

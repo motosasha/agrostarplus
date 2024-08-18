@@ -5,11 +5,13 @@
 .button {
   $block-name: &; // #{$block-name}__element
 
-  @include button-reset.button-reset;
+  @include button-reset.button-reset(flex);
   @include text-styles.button;
 
+  justify-content: center;
   padding: 14px 24px;
   color: var(--front-tertiary);
+  text-decoration: none;
   background-color: var(--back-dark);
   border-radius: 24px;
   transition: background-color var(--transition-default);

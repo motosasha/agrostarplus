@@ -20,7 +20,7 @@
     display: grid;
     gap: 24px;
     padding: 16px;
-    background: var(--back-secondary);
+    background-color: var(--back-secondary);
     border-radius: 24px;
 
     @media screen and (min-width: breakpoints.$screen-ti) {
@@ -126,7 +126,7 @@
   &__map {
     height: 380px;
     overflow: hidden;
-    background: var(--back-primary);
+    background-color: var(--back-primary);
     border-radius: 16px;
 
     @media screen and (min-width: breakpoints.$screen-d) {

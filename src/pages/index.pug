@@ -8,7 +8,50 @@ block variables
 
 block content
   .grid
-    section.about
+    section.hero
+      .container
+        .hero__inner
+          .hero__banner
+            .hero__info
+              ul.hero__list
+                li.hero__li
+                  svg.hero__bullet
+                    use(href= path.icon + "icon__bullet")
+                  | Кормовые добавки
+                li.hero__li
+                  svg.hero__bullet
+                    use(href= path.icon + "icon__bullet")
+                  | Аудит ферм
+                li.hero__li
+                  svg.hero__bullet
+                    use(href= path.icon + "icon__bullet")
+                  | Лабораторный анализ кормов
+              .hero__descr Качество · Инновации · Профессионализм
+              a.button.hero__button(href="#products") Продукция
+            img.hero__image(src= path.img + "img__hero.webp", alt="")
+          .hero__row
+            .hero__tile
+              .hero__icon
+                svg.hero__symbol
+                  use(href= path.icon + "icon__gem")
+              .hero__tile-title Высокое качество<br>роизводимой продукции
+            .hero__tile
+              .hero__icon
+                svg.hero__symbol
+                  use(href= path.icon + "icon__box")
+              .hero__tile-title Собственное<br>производство
+            .hero__tile
+              .hero__icon
+                svg.hero__symbol
+                  use(href= path.icon + "icon__user")
+              .hero__tile-title Высокий уровень<br>специалистов
+            .hero__tile
+              .hero__icon
+                svg.hero__symbol
+                  use(href= path.icon + "icon__lab")
+              .hero__tile-title Собственная<br>лаборатория
+
+    section#about.about
       .container
         .about__inner
           img.about__image(src= path.img + "img__about.webp", alt="")
@@ -22,9 +65,9 @@ block content
               для любого сегмента сельскохозяйственного производства. Чтобы обеспечить стабильное качество продукции
               и полный контроль над производственным процессом, мы располагаем полностью собственными
               производственными линиями.
-            button.button.about__button Подробнее
+            a.button.about__button(href="#products") Подробнее
 
-    section.products
+    section#products.products
       .container
         .products__inner
           h2.products__title Продукция
@@ -48,8 +91,8 @@ block content
                           svg.product-tile__file-icon
                             use(href= path.icon + "icon__pdf")
                           .product-tile__file-title!= slide.file.title
-                          a.product-tile__file-link(href="#", download) Скачать
-                      button.button.product-tile__button Узнать цену
+                          a.product-tile__file-link(href="file.pdf", download) Скачать
+                      a.button.product-tile__button(href="#contacts") Узнать цену
             .swiper-pagination.products__pagination
             .products__nav
               .products__prev
@@ -59,7 +102,7 @@ block content
                 svg.products__icon
                   use(href= path.icon + "icon__arrow--next")
 
-    section.services
+    section#services.services
       .container
         .services__inner
           h2.services__title Услуги
@@ -92,7 +135,7 @@ block content
               .services__tile-side.services__tile-back
                 .services__tile-descr text
 
-    section.contacts
+    section#contacts.contacts
       .container
         .contacts__inner
           form.form.contacts__form(action="https://jsonplaceholder.typicode.com/posts")
