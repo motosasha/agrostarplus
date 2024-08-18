@@ -1,0 +1,77 @@
+@use "../../scss/breakpoints";
+@use "../../scss/mixins/text-styles";
+
+.about {
+  $block-name: &; // #{$block-name}__element
+
+  &__inner {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+      display: grid;
+    	grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    gap: 16px;
+
+    @media screen and (min-width: breakpoints.$screen-tl) {
+    	align-self: center;
+    }
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	grid-column: 8 / 13;
+      gap: 24px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: 0.24px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      @include text-styles.h1;
+    }
+  }
+
+  &__p {
+    @include text-styles.caption;
+
+    margin: 0;
+    color: var(--grey);
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+    	@include text-styles.description;
+    }
+  }
+
+  &__button {
+    width: 181px;
+    margin-top: 8px;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      margin-top: 12px;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    @media screen and (min-width: breakpoints.$screen-d) {
+      grid-column: 1 / 7;
+    }
+  }
+}

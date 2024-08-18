@@ -35,6 +35,10 @@
   }
 
   &__button {
-    align-self: end;
+    align-self: start;
+
+    @media screen and (min-width: breakpoints.$screen-t) {
+      margin-top: 28px;
+    }
   }
 }
