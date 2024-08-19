@@ -26,6 +26,8 @@
   }
 
   &__info {
+    position: relative;
+    z-index: var(--z-index-base);
     padding: 16px;
 
     @media screen and (min-width: breakpoints.$screen-tl) {
