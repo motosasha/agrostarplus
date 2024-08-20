@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=0.1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="google" content="notranslate">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" sizes="32x32" href="./img/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg">
+    <link rel="apple-touch-icon" href="./img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <meta name="theme-color" content="#196ca8">
+    <title>СервисАгро+</title>
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <link rel="stylesheet" href="./css/style.css"><script>// Remove the "no-js" class from the html, add the "js" class: from the style level we know whether JS works
+document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+
+// touch/no-touch
+"ontouchstart" in window ? cth("touch") : cth("no-touch");
+
+// Browser
+cth(getBrowser());
+
+// OS
+if (~navigator.appVersion.indexOf("Win")) cth("windows");
+if (~navigator.appVersion.indexOf("Mac")) cth("osx");
+if (~["iPhone", "iPod"].indexOf(navigator.platform)) cth("ios");
+if (~["iPad"].indexOf(navigator.platform)) cth("ipados");
+if (~navigator.appVersion.indexOf("Linux")) cth("linux");
+
+// Adding 1vh (use: height: 100vh; height: calc(var(--vh, 1vh) * 100);) to fix 100vh on mobile phones
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+window.addEventListener("resize", () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+});
+
+function cth(c) {
+  document.documentElement.classList.add(c);
+}
+
+function getBrowser() {
+  let userAgent = navigator.userAgent;
+  let browser = "Unknown";
+
+  // Detect Chrome
+  if (/Chrome/.test(userAgent) && !/Chromium/.test(userAgent)) {
+    browser = "chrome";
+  }
+  // Detect Chromium-based Edge
+  else if (/Edg/.test(userAgent)) {
+    browser = "edge";
+  }
+  // Detect Firefox
+  else if (/Firefox/.test(userAgent)) {
+    browser = "firefox";
+  }
+  // Detect Safari
+  else if (/Safari/.test(userAgent)) {
+    browser = "safari";
+  }
+  // Detect Internet Explorer
+  else if (/Trident/.test(userAgent)) {
+    browser = "ie";
+  }
+  return browser;
+}
+</script>
+  </head>
+  <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
+    <div class="page">
+      <div class="page__nav">
+        <div class="nav">
+          <div class="nav__inner">
+            <div class="nav__header">
+              <div class="nav__logo"><svg class="logo">
+                  <use href="./img/svgSprite.svg#logo__agro"></use>
+                </svg></div><button class="nav__close" data-menu-trigger="data-menu-trigger"><svg class="nav__icon">
+                  <use href="./img/svgSprite.svg#icon__close"></use>
+                </svg></button>
+            </div>
+            <div class="nav__body">
+              <nav class="nav__nav"><a class="nav__link" href="#about" data-menu-trigger="data-menu-trigger">О компании</a><a class="nav__link" href="#products" data-menu-trigger="data-menu-trigger">Продукция</a><a class="nav__link" href="#services" data-menu-trigger="data-menu-trigger">Услуги</a><a class="nav__link" href="#contacts" data-menu-trigger="data-menu-trigger">Контакты</a></nav>
+              <div class="header__phone"><a class="phone" href="tel:88006009055">
+                  <div class="phone__icon"><svg class="phone__symbol">
+                      <use href="./img/svgSprite.svg#icon__phone"></use>
+                    </svg></div>
+                  <div class="phone__num">8 800 600 9055</div>
+                  <div class="phone__descr">Бесплатный звонок по РФ</div>
+                </a></div><a class="button header__button" href="#contacts" data-menu-trigger="data-menu-trigger">Написать нам</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__header">
+        <div class="header">
+          <div class="container">
+            <div class="header__inner"><button class="header__logo"><svg class="logo">
+                  <use href="./img/svgSprite.svg#logo__agro"></use>
+                </svg></button>
+              <nav class="header__nav"><a class="header__link" href="#about">О компании</a><a class="header__link" href="#products">Продукция</a><a class="header__link" href="#services">Услуги</a><a class="header__link" href="#contacts">Контакты</a></nav>
+              <div class="header__actions">
+                <div class="header__phone"><a class="phone" href="tel:88006009055">
+                    <div class="phone__icon"><svg class="phone__symbol">
+                        <use href="./img/svgSprite.svg#icon__phone"></use>
+                      </svg></div>
+                    <div class="phone__num">8 800 600 9055</div>
+                    <div class="phone__descr">Бесплатный звонок по РФ</div>
+                  </a></div><a class="button header__button" href="#contacts">Написать нам</a>
+              </div><button class="header__menu" data-menu-trigger="data-menu-trigger">
+                <div class="burger">
+                  <div class="burger__line"></div>
+                  <div class="burger__line"></div>
+                  <div class="burger__line"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__main">
+        <div class="grid">
+          <section class="hero">
+            <div class="container">
+              <div class="hero__inner">
+                <div class="hero__banner">
+                  <div class="hero__info">
+                    <ul class="hero__list">
+                      <li class="hero__li"><svg class="hero__bullet">
+                          <use href="./img/svgSprite.svg#icon__bullet"></use>
+                        </svg>Кормовые добавки</li>
+                      <li class="hero__li"><svg class="hero__bullet">
+                          <use href="./img/svgSprite.svg#icon__bullet"></use>
+                        </svg>Аудит ферм</li>
+                      <li class="hero__li"><svg class="hero__bullet">
+                          <use href="./img/svgSprite.svg#icon__bullet"></use>
+                        </svg>Лабораторный анализ кормов</li>
+                    </ul>
+                    <div class="hero__descr">Качество · Инновации · Профессионализм</div><a class="button hero__button" href="#products">Продукция</a>
+                  </div><img class="hero__image" src="./img/img__hero.webp" alt="">
+                </div>
+                <div class="hero__row">
+                  <div class="hero__tile">
+                    <div class="hero__icon"><svg class="hero__symbol">
+                        <use href="./img/svgSprite.svg#icon__gem"></use>
+                      </svg></div>
+                    <div class="hero__tile-title">Высокое качество<br>роизводимой продукции</div>
+                  </div>
+                  <div class="hero__tile">
+                    <div class="hero__icon"><svg class="hero__symbol">
+                        <use href="./img/svgSprite.svg#icon__box"></use>
+                      </svg></div>
+                    <div class="hero__tile-title">Собственное<br>производство</div>
+                  </div>
+                  <div class="hero__tile">
+                    <div class="hero__icon"><svg class="hero__symbol">
+                        <use href="./img/svgSprite.svg#icon__user"></use>
+                      </svg></div>
+                    <div class="hero__tile-title">Высокий уровень<br>специалистов</div>
+                  </div>
+                  <div class="hero__tile">
+                    <div class="hero__icon"><svg class="hero__symbol">
+                        <use href="./img/svgSprite.svg#icon__lab"></use>
+                      </svg></div>
+                    <div class="hero__tile-title">Собственная<br>лаборатория</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="about" id="about">
+            <div class="container">
+              <div class="about__inner"><img class="about__image" src="./img/img__about.webp" alt="">
+                <div class="about__info">
+                  <h2 class="about__title">О компании</h2>
+                  <p class="about__p">Мы являемся клиентоориентированной компанией. Прогресс на благо отрасли и тех, кого мы обслуживаем,
+                    определяет решения и действия нашего бизнеса. Помня об этом, мы продолжаем создавать, тестировать
+                    и предлагать продукты и услуги, ориентированные на конечного пользователя: наших клиентов.
+                    Передовые технологии в области кормления, позволяют нам выпускать кормовые решения мирового уровня
+                    для любого сегмента сельскохозяйственного производства. Чтобы обеспечить стабильное качество продукции
+                    и полный контроль над производственным процессом, мы располагаем полностью собственными
+                    производственными линиями.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="products" id="products">
+            <div class="container">
+              <div class="products__inner">
+                <h2 class="products__title">Продукция</h2>
+                <div class="swiper products__slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide products__slide">
+                      <div class="product-tile"><img class="product-tile__image" src="./img/product-palmatrix.webp" alt="">
+                        <div class="product-tile__info">
+                          <div class="product-tile__header">
+                            <h3 class="product-tile__title">Palmatrix</h3>
+                            <div class="product-tile__descr">Сухой защищённый жир 84%</div>
+                          </div>
+                          <div class="product-tile__table">
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Вид:</div>
+                              <div class="product-tile__value">Порошок светло-бежевого цвета</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Упаковка:</div>
+                              <div class="product-tile__value">Мешок 25 кг</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Срок годности:</div>
+                              <div class="product-tile__value">12 месяцев</div>
+                            </div>
+                          </div>
+                          <div class="product-tile__file"><svg class="product-tile__file-icon">
+                              <use href="./img/svgSprite.svg#icon__pdf"></use>
+                            </svg>
+                            <div class="product-tile__file-title">Инструкция по применению</div><a class="product-tile__file-link" href="file.pdf" download>Скачать</a>
+                          </div><a class="button product-tile__button" href="#contacts">Узнать цену</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide products__slide">
+                      <div class="product-tile"><img class="product-tile__image" src="./img/product-bobitab.webp" alt="">
+                        <div class="product-tile__info">
+                          <div class="product-tile__header">
+                            <h3 class="product-tile__title">Бовитаб</h3>
+                            <div class="product-tile__descr">Шипучая таблетка для восстановления электролитного баланса при диарее телят</div>
+                          </div>
+                          <div class="product-tile__table">
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Вид:</div>
+                              <div class="product-tile__value">таблетка водорастворимая шипучая</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Упаковка:</div>
+                              <div class="product-tile__value">30 шт (0,06 кг каждая) в картонной коробке общим весом 2,0 кг</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">Срок годности:</div>
+                              <div class="product-tile__value">18 месяцев</div>
+                            </div>
+                          </div><a class="button product-tile__button" href="#contacts">Узнать цену</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide products__slide">
+                      <div class="product-tile"><img class="product-tile__image" src="./img/product-filler.webp" alt="">
+                        <div class="product-tile__info">
+                          <div class="product-tile__header">
+                            <h3 class="product-tile__title">title</h3>
+                            <div class="product-tile__descr">description</div>
+                          </div>
+                          <div class="product-tile__table">
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                          </div><a class="button product-tile__button" href="#contacts">Узнать цену</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide products__slide">
+                      <div class="product-tile"><img class="product-tile__image" src="./img/product-filler.webp" alt="">
+                        <div class="product-tile__info">
+                          <div class="product-tile__header">
+                            <h3 class="product-tile__title">title</h3>
+                            <div class="product-tile__descr">description</div>
+                          </div>
+                          <div class="product-tile__table">
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                            <div class="product-tile__row">
+                              <div class="product-tile__key">key</div>
+                              <div class="product-tile__value">value</div>
+                            </div>
+                          </div><a class="button product-tile__button" href="#contacts">Узнать цену</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination products__pagination"></div>
+                  <div class="products__nav">
+                    <div class="products__prev"><svg class="products__icon">
+                        <use href="./img/svgSprite.svg#icon__arrow--prev"></use>
+                      </svg></div>
+                    <div class="products__next"><svg class="products__icon">
+                        <use href="./img/svgSprite.svg#icon__arrow--next"></use>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="services" id="services">
+            <div class="container">
+              <div class="services__inner">
+                <h2 class="services__title">Услуги</h2>
+                <div class="services__row">
+                  <div class="services__tile">
+                    <div class="services__tile-side services__tile-front">
+                      <div class="services__tile-title">Аудит<br>хозяйств</div><svg class="services__tile-icon">
+                        <use href="./img/svgSprite.svg#icon__file"></use>
+                      </svg><svg class="services__tile-arrow">
+                        <use href="./img/svgSprite.svg#icon__arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="services__tile-side services__tile-back">
+                      <div class="services__tile-descr">Независимый аудит — лучший способ выявить проблема, которые не дают хозяйству работать с высокой эффективностью. Мы проводим комплексный аудит молочной формы и анализируем все выявления проблемы. С нашей помощью клиент сможет выявить факторы, которые оказывают негативные влияние на эффективность и экономику хозяйств.</div>
+                    </div>
+                  </div>
+                  <div class="services__tile">
+                    <div class="services__tile-side services__tile-front">
+                      <div class="services__tile-title">Расчет<br>рациона</div><svg class="services__tile-icon">
+                        <use href="./img/svgSprite.svg#icon__apple"></use>
+                      </svg><svg class="services__tile-arrow">
+                        <use href="./img/svgSprite.svg#icon__arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="services__tile-side services__tile-back">
+                      <div class="services__tile-descr">text</div>
+                    </div>
+                  </div>
+                  <div class="services__tile">
+                    <div class="services__tile-side services__tile-front">
+                      <div class="services__tile-title">Лабораторные<br>исследования</div><svg class="services__tile-icon">
+                        <use href="./img/svgSprite.svg#icon__lab"></use>
+                      </svg><svg class="services__tile-arrow">
+                        <use href="./img/svgSprite.svg#icon__arrow"></use>
+                      </svg>
+                    </div>
+                    <div class="services__tile-side services__tile-back">
+                      <div class="services__tile-descr">text</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="contacts" id="contacts">
+            <div class="container">
+              <div class="contacts__inner">
+                <form class="form contacts__form" action="https://jsonplaceholder.typicode.com/posts">
+                  <div class="form__row"><label class="field"><span class="field__label">Ваше имя</span><input class="input field__input" type="text" placeholder="Укажите ваше имя" name="name" required></label><label class="field"><span class="field__label">Номер телефона</span><input class="input field__input" type="tel" placeholder="+7(___)___-__-__" name="phone" required></label><label class="field"><span class="field__label">Ваш email</span><input class="input field__input" type="email" placeholder="Укажите ваш email" name="email" required></label><button class="button form__button" type="submit">Отправить</button></div>
+                  <div class="form__row"><label class="checkbox"><input class="checkbox__input" type="checkbox" name="isAgree" required>
+                      <div class="checkbox__fake-input"></div><span class="checkbox__label">Нажимая на кнопку «Отправить» Вы даёте согласие на обработку своих персональных данных
+в соответствии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ
+«О персональных данных»</span>
+                    </label></div>
+                </form>
+                <div class="contacts__block">
+                  <div class="contacts__info">
+                    <h2 class="contacts__title">Наши контакты</h2>
+                    <div class="contacts__item">
+                      <div class="contacts__icon"><svg class="contacts__symbol">
+                          <use href="./img/svgSprite.svg#icon__building"></use>
+                        </svg></div>
+                      <div class="contacts__label">Компания</div>
+                      <div class="contacts__value">ООО «СервисАгро+»</div>
+                    </div>
+                    <div class="contacts__item">
+                      <div class="contacts__icon"><svg class="contacts__symbol">
+                          <use href="./img/svgSprite.svg#icon__phone"></use>
+                        </svg></div>
+                      <div class="contacts__label">Телефон</div><a class="contacts__value" href="tel:88006009055">8 800 600 9055</a>
+                    </div>
+                    <div class="contacts__item">
+                      <div class="contacts__icon"><svg class="contacts__symbol">
+                          <use href="./img/svgSprite.svg#icon__email"></use>
+                        </svg></div>
+                      <div class="contacts__label">Пишите нам</div><a class="contacts__value" href="mailto:servisagro2@gmail.com">servisagro2@gmail.com</a>
+                    </div>
+                    <div class="contacts__item">
+                      <div class="contacts__icon"><svg class="contacts__symbol">
+                          <use href="./img/svgSprite.svg#icon__pin"></use>
+                        </svg></div>
+                      <div class="contacts__label">Заходите в гости</div>
+                      <div class="contacts__value">РТ, г. Казань,<br> ул. Поперечно-Отарская, д. 100</div>
+                    </div>
+                  </div>
+                  <div class="contacts__map"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbd26ddeda080513fb8cdf211b3f35aec483524ff63f6736f229e7141ddd866d&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="hystmodal" id="modal-thanks" aria-hidden="true">
+          <div class="hystmodal__wrap">
+            <div class="hystmodal__window modal" role="dialog" aria-modal="true">
+              <div class="modal__inner"><button class="hystmodal__close modal__close" data-hystclose="" title="Закрыть"><svg class="modal__icon">
+                    <use href="img/svgSprite.svg#icon__cross"></use>
+                  </svg></button>
+                <div class="modal__center">
+                  <header class="modal__header">
+                    <h2 class="modal__title">Благодарим<br> Вас за заявку!</h2>
+                    <p class="modal__descr">Наш менеджер свяжется с вами в ближайшее время</p>
+                  </header><button class="button modal__button" data-hystclose="">Закрыть</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__darker"></div>
+    </div><script src="./js/bundle.js"></script>
+  </body>
+</html>

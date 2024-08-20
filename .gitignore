@@ -1,6 +1,5 @@
 design/
 temp/
-build/*
 !build/readme.md
 
 src/js/entry.js
